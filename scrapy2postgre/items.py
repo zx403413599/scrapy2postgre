@@ -9,9 +9,12 @@ import scrapy
 
 
 class zbfl(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+    dbcode = scrapy.Field()
     id = scrapy.Field()
+    isParent = scrapy.Field()
+    name = scrapy.Field()
+    pid = scrapy.Field()
+    wdcode = scrapy.Field()
 #
 # class zbdata(scrapy.Item):
 #     # define the fields for your item here like:
