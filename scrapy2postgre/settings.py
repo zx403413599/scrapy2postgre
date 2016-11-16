@@ -95,3 +95,14 @@ EXTENSIONS = {
     'scrapy_jsonrpc.webservice.WebService': 500,
 }
 JSONRPC_ENABLED = True
+
+ITEM_PIPELINES = ['scrapy2postgre.pipelines.Scrapy2PostgrePipeline']
+
+DATABASE = {
+    'drivername': 'postgres',
+    'host': 'localhost',
+    'port': '5432',
+    'username': 'postgres',  # fill in your username here
+    'password': 'ximen120',  # fill in your password here
+    'database': 'scrapy2postgre'
+}

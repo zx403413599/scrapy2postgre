@@ -8,7 +8,27 @@
 import scrapy
 
 
-class Scrapy2PostgreItem(scrapy.Item):
+class zbfl(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    id = scrapy.Field()
+#
+# class zbdata(scrapy.Item):
+#     # define the fields for your item here like:
+#     # name = scrapy.Field()
+#     id = scrapy.Field()
+#
+# class zbmeta(scrapy.Item):
+#     # define the fields for your item here like:
+#     # name = scrapy.Field()
+#     id = scrapy.Field()
+#
+# class regmeta(scrapy.Item):
+#     # define the fields for your item here like:
+#     # name = scrapy.Field()
+#     id = scrapy.Field()
+#
+# class sjmeta(scrapy.Item):
+#     # define the fields for your item here like:
+#     # name = scrapy.Field()
+#     id = scrapy.Field()

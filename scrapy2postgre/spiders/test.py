@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+from scrapy2postgre.items import zbfl#zbdata,zbfl,zbmeta,regmeta,sjmeta
 
 class TestSpider(scrapy.Spider):
     name = "test"
@@ -10,4 +10,5 @@ class TestSpider(scrapy.Spider):
     )
 
     def parse(self, response):
-        pass
+        zbfl["id"]=1
+        yield zbfl
