@@ -7,7 +7,9 @@
 
 import scrapy
 
+"""建立item用于从json数据中抽取数据并存储到数据库"""
 
+#指标分类的信息
 class zbfl(scrapy.Item):
     dbcode = scrapy.Field()
     code = scrapy.Field()
@@ -16,7 +18,7 @@ class zbfl(scrapy.Item):
     pid = scrapy.Field()
     wdcode = scrapy.Field()
 
-
+#指标数据的信息。
 class zbdata(scrapy.Item):
     dbcode = scrapy.Field()
     code = scrapy.Field()
@@ -34,7 +36,7 @@ class zbdata(scrapy.Item):
     reg_valuecode = scrapy.Field()
     reg_wdcode = scrapy.Field()
 
-# 定义指标class
+# 定义元数据的class
 class zbmeta(scrapy.Item):
     dbcode = scrapy.Field()
     wdcode = scrapy.Field()

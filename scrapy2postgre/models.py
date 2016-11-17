@@ -1,20 +1,28 @@
-from sqlalchemy import create_engine,Column,Integer,String,Boolean
+from sqlalchemy import create_engine, Column, Integer, String, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 
+"""通过sqlachemy库，利用models管理数据库的表结构。
+   这样的好处是在切换数据库的时候改变的比较少。
+   初衷因为是一个资料中是这样使用的。
+"""
 
 DeclarativeBase = declarative_base()
 
+#创建数据库链接，这里的数据库链接字符串是手动拼的，应该是使用URL函数，从settings中的参数拼接。
+#但有问题没有解决，这里直接拼接了
 def db_connect():
     """Performs database connection using database settings from settings.py.
     Returns sqlalchemy engine instance.
     """
-    return create_engine("postgresql://postgres:ximen120@localhost/scrapy2postgre",pool_size=2000, max_overflow=30,pool_timeout = 600)
+    #除了拼接数据库链接字符串外，设置了数据池相关的参数，默认值太小，会常导致出错。
+    return create_engine("postgresql://postgres:ximen120@localhost/scrapy2postgre", pool_size=2000, max_overflow=30,pool_timeout = 600)
 
-
+#创建和维护数据库表。
 def create_tables(engine):
     """"create tables as define of class below"""
     DeclarativeBase.metadata.create_all(engine)
 
+#定义数据库表的model， 设置一个表名和列名以及列属性。
 class zbfl(DeclarativeBase):
     __tablename__ = "zbfl"
 

@@ -91,11 +91,13 @@ ROBOTSTXT_OBEY = True
 
 
 #new insert by ximen
+#一个监控工具，但貌似不太会用，暂时注解
 # EXTENSIONS = {
 #     'scrapy_jsonrpc.webservice.WebService': 500,
 # }
 # JSONRPC_ENABLED = True
 
+#设置pipline信息。
 ITEM_PIPELINES = {
    'scrapy2postgre.pipelines.Scrapy2PostgrePipeline': 300,
 }
