@@ -22,7 +22,7 @@ class Scrapy2PostgrePipeline(object):
         if isinstance(item,item_fl):
             fl = model_fl(**item)
             session = self.Session()
-            q = session.query(model_fl).filter(model_fl.dbcode == fl.dbcode, model_fl.id == fl.id)
+            q = session.query(model_fl).filter(model_fl.dbcode == fl.dbcode, model_fl.code == fl.code)
             if not session.query(q.exists()).scalar():
                 try:
                     session.add(fl)

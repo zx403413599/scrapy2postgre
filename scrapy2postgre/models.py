@@ -19,12 +19,12 @@ class zbfl(DeclarativeBase):
     __tablename__ = "zbfl"
 
     dbcode = Column(String(200))
-    id = Column(String(200))
+    code = Column(String(200))
     isParent = Column(String(200))
     name = Column(String(200))
     pid = Column(String(200))
     wdcode = Column(String(200))
-    _id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
 
 #
 # class zbmeta(DeclarativeBase):

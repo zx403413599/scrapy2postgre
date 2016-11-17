@@ -30,7 +30,7 @@ class TestSpider(scrapy.Spider):
         fldata = zbfl()
         for fl in zbfls:
             fldata["dbcode"] = fl["dbcode"]
-            fldata["id"] = fl["id"]
+            fldata["code"] = fl["id"]
             fldata["isParent"] = fl["isParent"]
             fldata["name"] = fl["name"]
             fldata["pid"] = fl["pid"]

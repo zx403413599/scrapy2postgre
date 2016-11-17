@@ -10,7 +10,7 @@ import scrapy
 
 class zbfl(scrapy.Item):
     dbcode = scrapy.Field()
-    id = scrapy.Field()
+    code = scrapy.Field()
     isParent = scrapy.Field()
     name = scrapy.Field()
     pid = scrapy.Field()
