@@ -52,3 +52,32 @@ class zbmeta(scrapy.Item):
     sortcode = scrapy.Field()
     tag = scrapy.Field()
     unit = scrapy.Field()
+
+#年鉴信息
+class njml(scrapy.Item):
+    njfl = scrapy.Field() #年鉴分类，根据查询入口不同而不同
+    njid = scrapy.Field() #年鉴ID，用于查询年鉴年份信息和年间目录信息
+    njname = scrapy.Field() #年鉴中文名称
+    year_num = scrapy.Field() #包含内容个数
+    njzb = scrapy.Field() #历任主编
+    bzjg = scrapy.Field() #编纂机构
+    cbs = scrapy.Field()  #出版社
+
+#年鉴年份信息
+class njnf(scrapy.Item):
+    njid = scrapy.Field()#年鉴ID，用于查询年鉴年份信息和年间目录信息
+    njname = scrapy.Field()#年鉴中文名称
+    year = scrapy.Field() #包含年份名称
+    year_id = scrapy.Field() #包含年份ID，用于查询年鉴目录信息。
+
+#年鉴目录
+class njcontent(scrapy.Item):
+    njid = scrapy.Field()#年鉴ID，用于查询年鉴年份信息和年间目录信息
+    year_id = scrapy.Field()#包含年份ID，用于查询年鉴目录信息。
+    row_count = scrapy.Field()#行数
+    mlmc = scrapy.Field() #条目标题
+    ym = scrapy.Field() #所在年鉴页码
+    filename = scrapy.Field() #文件名称，在知网中的名字
+    pg = scrapy.Field() #pagerange，知网文件参数
+    disk = scrapy.Field() #disk，知网文件参数，未知
+    down_url = scrapy.Field() #下载地址。只有excel格式文件下载才有

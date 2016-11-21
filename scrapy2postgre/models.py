@@ -114,3 +114,41 @@ class sjmeta(DeclarativeBase):
     sortcode = Column(Integer)
     tag = Column(String(2000))
     unit = Column(String(200))
+
+#年鉴信息
+class njml(DeclarativeBase):
+    __tablename__ = "njml"
+
+    id = Column(Integer, primary_key=True)
+    njfl = Column(String(200))
+    njid = Column(String(200))
+    njname = Column(String(200))
+    year_num = Column(Integer)
+    njzb = Column(String(2000))
+    bzjg = Column(String(2000))
+    cbs = Column(String(2000))
+
+#年鉴年份信息
+class njnf(DeclarativeBase):
+    __tablename__ = "njnf"
+
+    id = Column(Integer, primary_key=True)
+    njid = Column(String(200))
+    njname = Column(String(200))
+    year = Column(String(200))
+    year_id = Column(String(2000))
+
+#年鉴目录
+class njcontent(DeclarativeBase):
+    __tablename__ = "njcontent"
+
+    id = Column(Integer, primary_key=True)
+    njid = Column(String(200))
+    year_id = Column(String(2000))
+    row_count = Column(Integer)
+    mlmc = Column(String(2000))
+    ym = Column(String(2000))
+    filename = Column(String(2000))
+    pg = Column(String(200))
+    disk = Column(String(2000))
+    down_url = Column(String(2000))
