@@ -60,7 +60,7 @@ class Scrapy2PostgrePipeline(object):
                 session.rollback()
                 raise
             finally:
-                session.close_all()
+                session.close()
         else:
-            session.close_all()
+            session.close()
         return item

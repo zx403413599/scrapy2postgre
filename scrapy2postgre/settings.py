@@ -101,3 +101,17 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
    'scrapy2postgre.pipelines.Scrapy2PostgrePipeline': 300,
 }
+#每个response处理的item个数，默认为100
+CONCURRENT_ITEMS = 1000
+#scrapy downloader处理的requests最大数据，默认为16
+CONCURRENT_REQUESTS = 160
+#每个域能同时处理的最大请求数，默认为8
+CONCURRENT_REQUESTS_PER_DOMAIN = 80
+#DNS查询超时设置，默认为60秒
+DNS_TIMEOUT = 600
+#同一个网站多次请求之间的延迟毫秒数，默认为0
+DOWNLOAD_DELAY = 0.25
+#downloader超时设置，默认为180
+DOWNLOAD_TIMEOUT = 1800
+#再io允许的情况下线程池设置，默认为10
+REACTOR_THREADPOOL_MAXSIZE = 100
