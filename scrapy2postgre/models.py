@@ -15,7 +15,7 @@ def db_connect():
     Returns sqlalchemy engine instance.
     """
     #除了拼接数据库链接字符串外，设置了数据池相关的参数，默认值太小，会常导致出错。
-    return create_engine("postgresql://ximen120:jwq120@localhost/postgre4scrapy", pool_size=2000, max_overflow=300,pool_timeout = 600)
+    return create_engine("postgresql://Simon:ximen120@192.168.1.120/postgre4scrapy", pool_size=2000, max_overflow=300,pool_timeout = 600)
 
 #创建和维护数据库表。
 def create_tables(engine):
