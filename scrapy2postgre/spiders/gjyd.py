@@ -8,31 +8,31 @@ from scrapy2postgre.items import zbfl, zbmeta as ZbMeta, zbdata as ZbData
 
 class TestSpider(scrapy.Spider):
     """这是statdata工程里爬取统计局数据的爬虫，负责爬去json格式的数据"""
-    name = "test" #爬虫的名字
+    name = "gjyd" #爬虫的名字
     allowed_domains = ["data.stats.gov.cn"] #爬虫的允许域名
     start_urls = (  #爬虫的种子地址，获取指标分类，然后获取元数据和数据
-        #年度数据
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=hgnd&wdcode=zb&m=getTree',
-        # 季度数据
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=hgjd&wdcode=zb&m=getTree',
-        # 月度数据
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=hgyd&wdcode=zb&m=getTree',
-        # 分省月度
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=fsyd&wdcode=zb&m=getTree',
-        # 分省季度
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=fsjd&wdcode=zb&m=getTree',
-        # 分省年度
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=fsnd&wdcode=zb&m=getTree',
-        # 主要城市月度
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=csyd&wdcode=zb&m=getTree',
+        # #年度数据
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=hgnd&wdcode=zb&m=getTree',
+        # # 季度数据
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=hgjd&wdcode=zb&m=getTree',
+        # # 月度数据
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=hgyd&wdcode=zb&m=getTree',
+        # # 分省月度
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=fsyd&wdcode=zb&m=getTree',
+        # # 分省季度
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=fsjd&wdcode=zb&m=getTree',
+        # # 分省年度
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=fsnd&wdcode=zb&m=getTree',
+        # # 主要城市月度
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=csyd&wdcode=zb&m=getTree',
         # 主要国家月度数据
         'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjyd&wdcode=zb&m=getTree',
-        # 三大经济体月度数据
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjydsdj&wdcode=zb&m=getTree',
-        # 国际市场月度商品价格
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjydsc&wdcode=zb&m=getTree',
-        # 主要国家（地区）年度数据
-        'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjnd&wdcode=zb&m=getTree',
+        # # 三大经济体月度数据
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjydsdj&wdcode=zb&m=getTree',
+        # # 国际市场月度商品价格
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjydsc&wdcode=zb&m=getTree',
+        # # 主要国家（地区）年度数据
+        # 'http://data.stats.gov.cn/easyquery.htm?id=zb&dbcode=gjnd&wdcode=zb&m=getTree',
     )
 
     def parse(self, response):
